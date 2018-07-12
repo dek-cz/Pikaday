@@ -1366,6 +1366,9 @@
                 if (v !== undefined && typeof this._o.onClose === 'function') {
                     this._o.onClose.call(this);
                 }
+				removeEvent(this._o.trigger, 'focus', this._onInputFocus);
+				this._o.field.focus();
+				addEvent(this._o.trigger, 'focus', this._onInputFocus);
             }
         },
 
