@@ -518,7 +518,7 @@
     {
         var self = this,
             opts = self.config(options);
-
+		self.isPreRendered = false;	
         self._onMouseDown = function(e)
         {
             if (!self._v) {
@@ -765,6 +765,7 @@
         } else {
             this.show();
         }
+		
     };
 
 
@@ -1366,9 +1367,14 @@
                 if (v !== undefined && typeof this._o.onClose === 'function') {
                     this._o.onClose.call(this);
                 }
-				removeEvent(this._o.trigger, 'focus', this._onInputFocus);
-				this._o.field.focus();
-				addEvent(this._o.trigger, 'focus', this._onInputFocus);
+				console.log(this);
+				if(this.isPreRendered){
+					removeEvent(this._o.trigger, 'focus', this._onInputFocus);
+					this._o.field.focus();
+					addEvent(this._o.trigger, 'focus', this._onInputFocus);
+				} else {
+					this.isPreRendered = true;
+				}
             }
         },
 
