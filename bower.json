@@ -27,9 +27,9 @@
     "0BSD",
     "MIT"
   ],
-  "homepage": "https://github.com/owenmead/Pikaday",
+  "homepage": "https://github.com/dek-cz/Pikaday",
   "repository": {
     "type": "git",
-    "url": "https://github.com/owenmead/Pikaday.git"
+    "url": "https://github.com/dek-cz/Pikaday.git"
   }
 }
